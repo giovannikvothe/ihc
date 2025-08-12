@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pedir Corrida - Carona PJF</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="pedir-corrida.css">
+</head>
+
+<body>
+    <header class="header">
+        <div class="container">
+            <a href="index.html" class="back-link">← Voltar</a>
+            <h1 class="logo">🚗 Carona PJF</h1>
+            <p class="tagline">Solicite sua carona</p>
+        </div>
+    </header>
+
+    <main class="main">
+        <div class="container">
+            <!-- S-01: Informar destino - Caixa de texto com ícone de lupa -->
+            <section class="destination-section">
+                <h2>Para onde você vai?</h2>
+                <p class="instruction">Digite seu destino para encontrar motoristas disponíveis</p>
+
+                <div class="search-container">
+                    <div class="search-box">
+                        <span class="search-icon">🔍</span>
+                        <input type="text" id="destination" placeholder="Digite o endereço de destino..."
+                            class="destination-input">
+                    </div>
+                    <button class="btn btn-primary search-btn">Buscar</button>
+                </div>
+            </section>
+
+            <section class="route-section" id="routeSection" style="display: none;">
+                <h3>Rota Encontrada</h3>
+                <div class="route-card">
+                    <div class="route-info">
+                        <div class="route-details">
+                            <div class="origin">
+                                <span class="icon">📍</span>
+                                <div>
+                                    <label>Origem</label>
+                                    <p>Local atual (detectado automaticamente)</p>
+                                </div>
+                            </div>
+                            <div class="destination">
+                                <span class="icon">🎯</span>
+                                <div>
+                                    <label>Destino</label>
+                                    <p id="destDisplay">Destino selecionado</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="route-summary">
+                            <div class="summary-item">
+                                <span class="icon">⏱️</span>
+                                <span>Tempo estimado: <strong>15 min</strong></span>
+                            </div>
+                            <div class="summary-item">
+                                <span class="icon">📏</span>
+                                <span>Distância: <strong>3.2 km</strong></span>
+                            </div>
+                            <div class="summary-item price">
+                                <span class="icon">💰</span>
+                                <span>Preço: <strong>R$ 8,50</strong></span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <button class="btn btn-primary confirm-btn" id="confirmBtn">
+                        ✅ Confirmar Corrida
+                    </button>
+                </div>
+            </section>
+
+            <section class="driver-section" id="driverSection" style="display: none;">
+                <h3>Motorista Encontrado!</h3>
+                <div class="driver-card">
+                    <div class="driver-info">
+                        <div class="driver-profile">
+                            <div class="driver-avatar">👨‍💼</div>
+                            <div class="driver-details">
+                                <h4>Carlos Santos</h4>
+                                <p>⭐ 4.8 (127 avaliações)</p>
+                                <p>🚗 Honda Civic - Branco</p>
+                                <p>🔄 Placa: ABC-1234</p>
+                            </div>
+                        </div>
+
+                        <div class="driver-status">
+                            <div class="status-item">
+                                <span class="icon">📍</span>
+                                <span>Chegando em <strong>3 min</strong></span>
+                            </div>
+                            <div class="status-item">
+                                <span class="icon">📱</span>
+                                <span>Carlos está a caminho</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="map-placeholder">
+                        <div class="map-content">
+                            <span class="map-icon">🗺️</span>
+                            <p>Mapa do trajeto</p>
+                            <div class="car-icon">🚗</div>
+                            <div class="location-icon">📍</div>
+                        </div>
+                    </div>
+
+                    <div class="action-buttons">
+                        <button class="btn btn-secondary">📞 Ligar</button>
+                        <button class="btn btn-secondary">💬 Mensagem</button>
+                        <button class="btn btn-danger">❌ Cancelar</button>
+                    </div>
+                </div>
+            </section>
+
+            <div class="progress-indicator">
+                <div class="progress-step active" data-step="1">
+                    <span class="step-number">1</span>
+                    <span class="step-label">Destino</span>
+                </div>
+                <div class="progress-step" data-step="2">
+                    <span class="step-number">2</span>
+                    <span class="step-label">Confirmação</span>
+                </div>
+                <div class="progress-step" data-step="3">
+                    <span class="step-number">3</span>
+                    <span class="step-label">Motorista</span>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 Carona PJF - DCC174</p>
+        </div>
+    </footer>
+
+    <script src="pedir-corrida.js"></script>
+</body>
+
+</html>

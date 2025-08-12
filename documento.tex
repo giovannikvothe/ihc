@@ -1,0 +1,131 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[brazil]{babel}
+\usepackage{array}
+\usepackage{geometry}
+\usepackage{graphicx}
+\usepackage{longtable}
+\usepackage{enumitem}
+
+\geometry{margin=2.5cm}
+
+\title{\textbf{DCC174 - Interação Humano-Computador \\ Parte I – Requisitos de IHC}}
+\author{Frederico Dôndici Gama Vieira \\ Rafael de Oliveira Zimbrão \\ João Vitor Fernandes Ribeiro Carneiro Ramos \\ Giovanni Almeida Dutra}
+\date{Juiz de Fora, Maio 2025}
+
+\begin{document}
+
+\maketitle
+
+\section{Análise da Situação Atual}
+
+\subsection{Perfis de Usuário}
+
+Foram identificados dois perfis principais: Passageiro e Motorista.
+
+\begin{longtable}{|p{4cm}|p{5cm}|p{5cm}|}
+\hline
+\textbf{Característica} & \textbf{Passageiro} & \textbf{Motorista} \\
+\hline
+Faixa Etária & [18, 60) & [18, 60) \\
+\hline
+Ocupação & Estudantes, trabalhadores assalariados, autônomos. & Motorista de aplicativo (integral ou complementar). \\
+\hline
+Educação & Diversificado. & Nível fundamental ou médio. \\
+\hline
+Afinidade com Tecnologia & Média a alta. & Média. \\
+\hline
+Experiência com Apps Similares & Alta. & Alta. \\
+\hline
+Tarefas Primárias & Solicitar corrida, ver preço, acompanhar trajeto, pagar. & Aceitar corridas, navegar, finalizar viagem, receber pagamento. \\
+\hline
+Tarefas Secundárias & Avaliar motorista, ver histórico, contatar suporte. & Avaliar passageiro, comunicar-se com passageiro. \\
+\hline
+Domínio do Produto & Aprendizado rápido e mínimo. & Aprendizado rápido e mínimo. \\
+\hline
+Tecnologia Disponível & Smartphones. & Smartphones. \\
+\hline
+\end{longtable}
+
+\subsection{Caracterização de Personas}
+
+\textbf{Persona 1: Ana Silva, a Estudante Conectada}
+\begin{itemize}
+    \item \textbf{Identidade:} Ana Silva, 22 anos, estudante de Arquitetura na UFJF.
+    \item \textbf{Narrativa:} Mora no bairro São Mateus, utiliza apps de transporte com frequência. Busca custo-benefício, frustra-se com preços dinâmicos e tempo de espera. Vê o Carona PJF como alternativa mais justa.
+\end{itemize}
+
+\textbf{Persona 2: Carlos Santos, o Motorista Experiente}
+\begin{itemize}
+    \item \textbf{Identidade:} Carlos Santos, 45 anos, motorista profissional.
+    \item \textbf{Narrativa:} Trabalha em tempo integral como motorista. Queixa-se das altas taxas de comissão. Um app sem taxas é mais atrativo.
+\end{itemize}
+
+\subsection{Metas de Design}
+\begin{itemize}
+    \item Simplicidade e Usabilidade: Interface intuitiva para passageiros e motoristas.
+    \item Eficiência: Tempo mínimo entre solicitação e início da corrida.
+    \item Segurança: Proteção de dados pessoais e financeiros.
+    \item Confiabilidade: Sistema estável com rastreamento preciso.
+    \item Comunicabilidade: Clareza sobre funcionalidades, próximos passos e estado do sistema.
+\end{itemize}
+
+\section{Síntese da Intervenção}
+
+\subsection{Design da Interação}
+
+\subsubsection{Cenário 1: Solicitação de uma Corrida (Ana Silva)}
+Narrativa do uso, seguida por diálogo estruturado e tabela de signos.
+
+\begin{longtable}{|p{1.5cm}|p{2.5cm}|p{5cm}|p{5cm}|}
+\hline
+\textbf{ID} & \textbf{Tipo} & \textbf{Significado (Conteúdo)} & \textbf{Expressão (Forma)} \\
+\hline
+S-01 & Conteúdo & Informar destino & Caixa de texto com ícone de lupa \\
+\hline
+S-02 & Conteúdo & Aceitação do trajeto e valor & Botão verde com texto branco \\
+\hline
+S-03 & Conteúdo & Trajeto do motorista & Mapa com ícone de carro \\
+\hline
+\end{longtable}
+
+\subsubsection{Cenário 2: Aceitação e Realização da Corrida (Carlos Santos)}
+
+\begin{longtable}{|p{1.5cm}|p{2.5cm}|p{5cm}|p{5cm}|}
+\hline
+\textbf{ID} & \textbf{Tipo} & \textbf{Significado (Conteúdo)} & \textbf{Expressão (Forma)} \\
+\hline
+S-04 & Conteúdo & Detalhes da corrida & Painel com dados da corrida \\
+\hline
+S-05 & Conteúdo & Confirmação da corrida & Barra horizontal deslizante \\
+\hline
+S-06 & Conteúdo & Início do trajeto & Botão destacado no app \\
+\hline
+\end{longtable}
+
+\subsubsection{Cenário 3: Cadastro de um Novo Motorista}
+
+\begin{longtable}{|p{1.5cm}|p{2.5cm}|p{5cm}|p{5cm}|}
+\hline
+\textbf{ID} & \textbf{Tipo} & \textbf{Significado (Conteúdo)} & \textbf{Expressão (Forma)} \\
+\hline
+S-07 & Conteúdo & Etapa atual do cadastro & Barra ou série de passos visuais no topo da tela \\
+\hline
+S-08 & Conteúdo & Envio de documento & Botão com ícone de câmera e texto \\
+\hline
+S-09 & Conteúdo & Confirmação de envio & Mensagem de sucesso com ícone de verificação \\
+\hline
+\end{longtable}
+
+\subsection{Análise dos Cenários}
+\begin{itemize}
+    \item No Cenário 1, clareza no botão de confirmação.
+    \item No Cenário 2, card hierarquizado para leitura rápida.
+    \item No Cenário 3, comunicação clara para dados sensíveis.
+\end{itemize}
+
+\subsection{Mapa de Objetivos dos Usuários}
+\textbf{Passageiro:} Final – Chegar ao destino. Diretos – Solicitar corrida, acompanhar motorista, pagar. Indiretos – Cadastro, avaliação.
+\textbf{Motorista:} Final – Obter renda. Diretos – Aceitar, realizar corrida, receber pagamento. Indiretos – Cadastro, histórico.
+
+\end{document}

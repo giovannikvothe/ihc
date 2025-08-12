@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aceitar Corrida - Carona PJF</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="aceitar-corrida.css">
+</head>
+
+<body>
+    <header class="header">
+        <div class="container">
+            <a href="index.html" class="back-link">← Voltar</a>
+            <h1 class="logo">🚗 Carona PJF</h1>
+            <p class="tagline">Área do Motorista</p>
+        </div>
+    </header>
+
+    <main class="main">
+        <div class="container">
+            <!-- S-04: Detalhes da corrida - Painel com dados da corrida -->
+            <section class="rides-section">
+                <h2>Corridas Disponíveis</h2>
+                <p class="instruction">Veja as solicitações de corrida e aceite as que desejar</p>
+
+                <div class="rides-grid">
+                    <div class="ride-card" data-ride-id="1">
+                        <div class="ride-header">
+                            <span class="ride-status new">Nova</span>
+                            <span class="ride-time">Agora</span>
+                        </div>
+
+                        <div class="ride-details">
+                            <div class="route-info">
+                                <div class="origin">
+                                    <span class="icon">📍</span>
+                                    <div>
+                                        <label>Origem</label>
+                                        <p>Bairro São Mateus, Juiz de Fora</p>
+                                    </div>
+                                </div>
+                                <div class="destination">
+                                    <span class="icon">🎯</span>
+                                    <div>
+                                        <label>Destino</label>
+                                        <p>Centro de Juiz de Fora</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="ride-summary">
+                                <div class="summary-item">
+                                    <span class="icon">⏱️</span>
+                                    <span>Tempo: <strong>15 min</strong></span>
+                                </div>
+                                <div class="summary-item">
+                                    <span class="icon">📏</span>
+                                    <span>Distância: <strong>3.2 km</strong></span>
+                                </div>
+                                <div class="summary-item price">
+                                    <span class="icon">💰</span>
+                                    <span>Ganho: <strong>R$ 8,50</strong></span>
+                                </div>
+                            </div>
+
+                            <div class="passenger-info">
+                                <div class="passenger-avatar">👩‍🎓</div>
+                                <div class="passenger-details">
+                                    <h4>Ana Silva</h4>
+                                    <p>⭐ 4.9 (89 avaliações)</p>
+                                    <p>Estudante - UFJF</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="ride-actions">
+                            <button class="btn btn-primary accept-btn" onclick="acceptRide(1)">
+                                ✅ Aceitar Corrida
+                            </button>
+                            <button class="btn btn-secondary" onclick="viewDetails(1)">
+                                📋 Ver Detalhes
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="ride-card" data-ride-id="2">
+                        <div class="ride-header">
+                            <span class="ride-status new">Nova</span>
+                            <span class="ride-time">2 min atrás</span>
+                        </div>
+
+                        <div class="ride-details">
+                            <div class="route-info">
+                                <div class="origin">
+                                    <span class="icon">📍</span>
+                                    <div>
+                                        <label>Origem</label>
+                                        <p>Bairro Santa Catarina, Juiz de Fora</p>
+                                    </div>
+                                </div>
+                                <div class="destination">
+                                    <span class="icon">🎯</span>
+                                    <div>
+                                        <label>Destino</label>
+                                        <p>Shopping Independência</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="ride-summary">
+                                <div class="summary-item">
+                                    <span class="icon">⏱️</span>
+                                    <span>Tempo: <strong>12 min</strong></span>
+                                </div>
+                                <div class="summary-item">
+                                    <span class="icon">📏</span>
+                                    <span>Distância: <strong>2.8 km</strong></span>
+                                </div>
+                                <div class="summary-item price">
+                                    <span class="icon">💰</span>
+                                    <span>Ganho: <strong>R$ 7,80</strong></span>
+                                </div>
+                            </div>
+
+                            <div class="passenger-info">
+                                <div class="passenger-avatar">👨‍💼</div>
+                                <div class="passenger-details">
+                                    <h4>João Silva</h4>
+                                    <p>⭐ 4.7 (156 avaliações)</p>
+                                    <p>Profissional</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="ride-actions">
+                            <button class="btn btn-primary accept-btn" onclick="acceptRide(2)">
+                                ✅ Aceitar Corrida
+                            </button>
+                            <button class="btn btn-secondary" onclick="viewDetails(2)">
+                                📋 Ver Detalhes
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="confirmation-section" id="confirmationSection" style="display: none;">
+                <h3>Confirmar Aceitação</h3>
+                <div class="confirmation-card">
+                    <div class="confirmation-content">
+                        <div class="confirmation-icon">🤝</div>
+                        <h4>Corrida Aceita!</h4>
+                        <p>Deslize para confirmar que você está a caminho</p>
+                    </div>
+
+                    <div class="slider-container">
+                        <div class="slider-track">
+                            <div class="slider-thumb" id="sliderThumb">
+                                <span class="thumb-icon">🚗</span>
+                            </div>
+                            <div class="slider-fill" id="sliderFill"></div>
+                        </div>
+                        <p class="slider-text">Deslize para confirmar →</p>
+                    </div>
+
+                    <div class="confirmation-details" id="confirmationDetails"></div>
+                </div>
+            </section>
+
+            <section class="trip-section" id="tripSection" style="display: none;">
+                <h3>Corrida em Andamento</h3>
+                <div class="trip-card">
+                    <div class="trip-header">
+                        <div class="trip-status">
+                            <span class="status-icon">🚗</span>
+                            <span class="status-text">A caminho do passageiro</span>
+                        </div>
+                        <div class="trip-timer">
+                            <span class="timer-label">Tempo de viagem:</span>
+                            <span class="timer-value" id="tripTimer">00:00</span>
+                        </div>
+                    </div>
+
+                    <div class="trip-map">
+                        <div class="map-placeholder">
+                            <div class="map-content">
+                                <span class="map-icon">🗺️</span>
+                                <p>Navegação ativa</p>
+                                <div class="car-icon">🚗</div>
+                                <div class="passenger-icon">👤</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="trip-actions">
+                        <button class="btn btn-primary" onclick="startNavigation()">
+                            🧭 Iniciar Navegação
+                        </button>
+                        <button class="btn btn-secondary" onclick="contactPassenger()">
+                            📞 Contatar Passageiro
+                        </button>
+                        <button class="btn btn-success" onclick="arrivedAtPickup()">
+                            ✅ Cheguei no Local
+                        </button>
+                    </div>
+                </div>
+            </section>
+
+            <div class="status-indicator">
+                <div class="status-step active" data-step="1">
+                    <span class="step-icon">👀</span>
+                    <span class="step-label">Ver Corridas</span>
+                </div>
+                <div class="status-step" data-step="2">
+                    <span class="step-icon">✅</span>
+                    <span class="step-label">Confirmar</span>
+                </div>
+                <div class="status-step" data-step="3">
+                    <span class="step-icon">🚗</span>
+                    <span class="step-label">Iniciar</span>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 Carona PJF - DCC174</p>
+        </div>
+    </footer>
+
+    <script src="aceitar-corrida.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro de Motorista - Carona PJF</title>
+    <link rel="stylesheet" href="cadastro-motorista.css">
+</head>
+
+<body>
+    <div class="container">
+        <header class="page-header">
+            <a href="index.html" class="back-link">← Voltar ao Início</a>
+            <h1>🚘 Cadastro de Motorista</h1>
+            <p>Junte-se à nossa comunidade de motoristas parceiros</p>
+        </header>
+
+        <main class="main-content">
+            <!-- S-07: Informações pessoais -->
+            <section class="form-section" id="personalInfo">
+                <div class="section-header">
+                    <div class="step-number">1</div>
+                    <h2>Informações Pessoais</h2>
+                    <p>Dados básicos para identificação</p>
+                </div>
+
+                <form class="registration-form" id="personalForm">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="fullName">Nome Completo *</label>
+                            <input type="text" id="fullName" name="fullName" required
+                                placeholder="Digite seu nome completo" class="form-input">
+                            <div class="input-icon">👤</div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="cpf">CPF *</label>
+                            <input type="text" id="cpf" name="cpf" required placeholder="000.000.000-00"
+                                class="form-input cpf-input">
+                            <div class="input-icon">🆔</div>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="email">E-mail *</label>
+                            <input type="email" id="email" name="email" required placeholder="seu@email.com"
+                                class="form-input">
+                            <div class="input-icon">📧</div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="phone">Telefone *</label>
+                            <input type="tel" id="phone" name="phone" required placeholder="(00) 00000-0000"
+                                class="form-input phone-input">
+                            <div class="input-icon">📱</div>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="birthDate">Data de Nascimento *</label>
+                            <input type="date" id="birthDate" name="birthDate" required class="form-input">
+                            <div class="input-icon">📅</div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="gender">Gênero</label>
+                            <select id="gender" name="gender" class="form-input">
+                                <option value="">Selecione...</option>
+                                <option value="masculino">Masculino</option>
+                                <option value="feminino">Feminino</option>
+                                <option value="outro">Outro</option>
+                                <option value="prefiro-nao-dizer">Prefiro não dizer</option>
+                            </select>
+                            <div class="input-icon">👥</div>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary next-step-btn">
+                        Continuar → Informações do Veículo
+                    </button>
+                </form>
+            </section>
+
+            <section class="form-section hidden" id="vehicleInfo">
+                <div class="section-header">
+                    <div class="step-number">2</div>
+                    <h2>Informações do Veículo</h2>
+                    <p>Dados do seu carro para as corridas</p>
+                </div>
+
+                <form class="registration-form" id="vehicleForm">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="vehicleBrand">Marca *</label>
+                            <input type="text" id="vehicleBrand" name="vehicleBrand" required
+                                placeholder="Ex: Toyota, Honda, Ford..." class="form-input">
+                            <div class="input-icon">🚗</div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="vehicleModel">Modelo *</label>
+                            <input type="text" id="vehicleModel" name="vehicleModel" required
+                                placeholder="Ex: Corolla, Civic, Focus..." class="form-input">
+                            <div class="input-icon">🚙</div>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="vehicleYear">Ano *</label>
+                            <input type="number" id="vehicleYear" name="vehicleYear" required min="1990" max="2025"
+                                placeholder="2020" class="form-input">
+                            <div class="input-icon">📅</div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="vehicleColor">Cor *</label>
+                            <input type="text" id="vehicleColor" name="vehicleColor" required
+                                placeholder="Ex: Branco, Prata, Preto..." class="form-input">
+                            <div class="input-icon">🎨</div>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="licensePlate">Placa *</label>
+                            <input type="text" id="licensePlate" name="licensePlate" required
+                                placeholder="ABC-1234 ou ABC1D23" class="form-input license-plate-input">
+                            <div class="input-icon">🚦</div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="vehicleType">Tipo de Veículo</label>
+                            <select id="vehicleType" name="vehicleType" class="form-input">
+                                <option value="sedan">Sedan</option>
+                                <option value="hatchback">Hatchback</option>
+                                <option value="suv">SUV</option>
+                                <option value="pickup">Pickup</option>
+                                <option value="van">Van</option>
+                            </select>
+                            <div class="input-icon">🚐</div>
+                        </div>
+                    </div>
+
+                    <div class="form-actions">
+                        <button type="button" class="btn btn-secondary prev-step-btn" onclick="showPreviousStep()">
+                            ← Voltar
+                        </button>
+                        <button type="submit" class="btn btn-primary next-step-btn">
+                            Continuar → Documentos
+                        </button>
+                    </div>
+                </form>
+            </section>
+
+            <section class="form-section hidden" id="documentsInfo">
+                <div class="section-header">
+                    <div class="step-number">3</div>
+                    <h2>Documentos Necessários</h2>
+                    <p>Envie os documentos para verificação</p>
+                </div>
+
+                <form class="registration-form" id="documentsForm">
+                    <div class="documents-grid">
+                        <div class="document-item">
+                            <div class="document-icon">📄</div>
+                            <h4>CNH (Carteira Nacional de Habilitação)</h4>
+                            <p>Foto da frente e verso da sua CNH</p>
+                            <div class="file-upload">
+                                <input type="file" id="cnhFront" name="cnhFront" accept="image/*,.pdf"
+                                    class="file-input" required>
+                                <label for="cnhFront" class="file-label">
+                                    <span class="upload-icon">📷</span>
+                                    <span class="upload-text">Frente da CNH</span>
+                                </label>
+                            </div>
+                            <div class="file-upload">
+                                <input type="file" id="cnhBack" name="cnhBack" accept="image/*,.pdf" class="file-input"
+                                    required>
+                                <label for="cnhBack" class="file-label">
+                                    <span class="upload-icon">📷</span>
+                                    <span class="upload-text">Verso da CNH</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="document-item">
+                            <div class="document-icon">🚗</div>
+                            <h4>Documento do Veículo</h4>
+                            <p>CRLV ou documento equivalente</p>
+                            <div class="file-upload">
+                                <input type="file" id="vehicleDoc" name="vehicleDoc" accept="image/*,.pdf"
+                                    class="file-input" required>
+                                <label for="vehicleDoc" class="file-label">
+                                    <span class="upload-icon">📷</span>
+                                    <span class="upload-text">Documento do Veículo</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="document-item">
+                            <div class="document-icon">📋</div>
+                            <h4>Comprovante de Residência</h4>
+                            <p>Conta de luz, água ou similar</p>
+                            <div class="file-upload">
+                                <input type="file" id="residenceProof" name="residenceProof" accept="image/*,.pdf"
+                                    class="file-input" required>
+                                <label for="residenceProof" class="file-label">
+                                    <span class="upload-icon">📷</span>
+                                    <span class="upload-text">Comprovante de Residência</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="document-item">
+                            <div class="document-icon">🆔</div>
+                            <h4>RG ou CPF</h4>
+                            <p>Documento de identificação</p>
+                            <div class="file-upload">
+                                <input type="file" id="identityDoc" name="identityDoc" accept="image/*,.pdf"
+                                    class="file-input" required>
+                                <label for="identityDoc" class="file-label">
+                                    <span class="upload-icon">📷</span>
+                                    <span class="upload-text">RG ou CPF</span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-actions">
+                        <button type="button" class="btn btn-secondary prev-step-btn" onclick="showPreviousStep()">
+                            ← Voltar
+                        </button>
+                        <button type="submit" class="btn btn-primary next-step-btn">
+                            Continuar → Revisão Final
+                        </button>
+                    </div>
+                </form>
+            </section>
+
+            <section class="form-section hidden" id="reviewInfo">
+                <div class="section-header">
+                    <div class="step-number">4</div>
+                    <h2>Revisão Final</h2>
+                    <p>Confirme todas as informações antes de enviar</p>
+                </div>
+
+                <div class="review-container">
+                    <div class="review-section">
+                        <h3>👤 Informações Pessoais</h3>
+                        <div class="review-data" id="personalReview"></div>
+                    </div>
+
+                    <div class="review-section">
+                        <h3>🚗 Informações do Veículo</h3>
+                        <div class="review-data" id="vehicleReview"></div>
+                    </div>
+
+                    <div class="review-section">
+                        <h3>📋 Documentos</h3>
+                        <div class="review-data" id="documentsReview"></div>
+                    </div>
+                </div>
+
+                <div class="terms-section">
+                    <div class="checkbox-group">
+                        <input type="checkbox" id="termsAccept" name="termsAccept" required>
+                        <label for="termsAccept">
+                            Li e aceito os <a href="#" class="terms-link">Termos de Uso</a> e
+                            <a href="#" class="terms-link">Política de Privacidade</a> *
+                        </label>
+                    </div>
+
+                    <div class="checkbox-group">
+                        <input type="checkbox" id="dataConsent" name="dataConsent" required>
+                        <label for="dataConsent">
+                            Autorizo o uso dos meus dados para fins de verificação e cadastro *
+                        </label>
+                    </div>
+                </div>
+
+                <div class="form-actions">
+                    <button type="button" class="btn btn-secondary prev-step-btn" onclick="showPreviousStep()">
+                        ← Voltar
+                    </button>
+                    <button type="submit" class="btn btn-success submit-btn" id="submitBtn">
+                        ✅ Enviar Cadastro
+                    </button>
+                </div>
+            </section>
+
+            <section class="form-section hidden" id="confirmationInfo">
+                <div class="confirmation-content">
+                    <div class="confirmation-icon">🎉</div>
+                    <h2>Cadastro Enviado com Sucesso!</h2>
+                    <p>Seu cadastro foi recebido e está sendo analisado pela nossa equipe.</p>
+
+                    <div class="confirmation-details">
+                        <div class="detail-item">
+                            <span class="detail-icon">📧</span>
+                            <span class="detail-text">Você receberá um e-mail de confirmação em breve</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-icon">⏰</span>
+                            <span class="detail-text">Análise prevista: 2-3 dias úteis</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-icon">📱</span>
+                            <span class="detail-text">Entraremos em contato pelo telefone informado</span>
+                        </div>
+                    </div>
+
+                    <div class="confirmation-actions">
+                        <a href="index.html" class="btn btn-primary">Voltar ao Início</a>
+                        <button type="button" class="btn btn-secondary" onclick="resetForm()">
+                            Novo Cadastro
+                        </button>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <div class="progress-indicator">
+            <div class="progress-step active" data-step="1">
+                <div class="step-number">1</div>
+                <div class="step-label">Pessoal</div>
+            </div>
+            <div class="progress-line"></div>
+            <div class="progress-step" data-step="2">
+                <div class="step-number">2</div>
+                <div class="step-label">Veículo</div>
+            </div>
+            <div class="progress-line"></div>
+            <div class="progress-step" data-step="3">
+                <div class="step-number">3</div>
+                <div class="step-label">Documentos</div>
+            </div>
+            <div class="progress-line"></div>
+            <div class="progress-step" data-step="4">
+                <div class="step-number">4</div>
+                <div class="step-label">Revisão</div>
+            </div>
+        </div>
+    </div>
+
+    <script src="cadastro-motorista.js"></script>
+</body>
+
+</html>

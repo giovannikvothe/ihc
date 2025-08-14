@@ -2,6 +2,8 @@ DCC174 - Interação Humano Computador
 
 Implementação de quatro telas para a disciplina de IHC, voltada para a engenharia semiótica.
 
+gitpages está habilitado.
+
 Grupo 7:
   Frederico Dôndici Gama Vieira
 
